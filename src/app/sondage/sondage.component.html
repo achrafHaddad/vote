@@ -1,0 +1,25 @@
+<form [formGroup]="sondageForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Title" required formControlName="title" />
+  </mat-form-field>
+  <br />
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea
+      matInput
+      placeholder="Description"
+      required
+      formControlName="description"
+    ></textarea>
+  </mat-form-field>
+  <br />
+  <!-- <label id="Select an option">Pick your Choice</label> -->
+  <br />
+  <!-- <mat-radio-group aria-label="Select an option" formControlName="choice">
+    <mat-radio-button value="yes">Yes</mat-radio-button>
+    <mat-radio-button value="no">No</mat-radio-button>
+  </mat-radio-group> -->
+  <button type="submit">Submit</button>
+</form>

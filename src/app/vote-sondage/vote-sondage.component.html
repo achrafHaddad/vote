@@ -1,0 +1,18 @@
+<form>
+  <div *ngIf="voteSondage">
+    <div>{{voteSondage.title}}</div>
+    <div>{{voteSondage.description}}</div>
+  </div>
+  <label id="Select an option">Pick your Choice</label>
+  <br />
+  <mat-radio-group
+    aria-label="Select an option"
+    name="choice"
+    [(ngModel)]="choice"
+  >
+    <mat-radio-button value="yes">yes</mat-radio-button>
+    <mat-radio-button value="no">no</mat-radio-button>
+  </mat-radio-group>
+  <br />
+  <button type="button" (click)="onSubmit()">Submit</button>
+</form>

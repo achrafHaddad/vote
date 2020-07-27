@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a
+    class="navbar-brand"
+    [routerLink]="['/list-sondage']"
+    routerLinkActive="router-link-active"
+    >Sondage</a
+  >
+  <button
+    (click)="toggle()"
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown" ngbDropdown>
+        <a
+          ngbDropdownToggle
+          class="nav-link dropdown-toggle"
+          routerLinkActive="router-link-active"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dropdown
+        </a>
+        <div
+          class="dropdown-menu"
+          ngbDropdownMenu
+          aria-labelledby="navbarDropdown"
+        >
+          <a
+            ngbDropdownItem
+            class="dropdown-item"
+            [routerLink]="['/create-sondage']"
+            routerLinkActive="router-link-active"
+            >create Sondage</a
+          >
+          <a
+            ngbDropdownItem
+            class="dropdown-item"
+            [routerLink]="['/list-sondage']"
+            routerLinkActive="router-link-active"
+            >Liste Sondage</a
+          >
+          <div class="dropdown-divider"></div>
+          <a
+            ngbDropdownItem
+            class="dropdown-item"
+            (click)="logout()"
+            routerLinkActive="router-link-active"
+            >Logout</a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

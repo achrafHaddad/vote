@@ -1,0 +1,92 @@
+<div class="app-body register">
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card mx-4">
+            <div class="card-body p-4">
+              <h1>Register</h1>
+              <form [formGroup]="registerform">
+                <p class="text-muted">
+                  Create your account
+                </p>
+                <mat-form-field class="full-width">
+                  <mat-label>Name</mat-label>
+
+                  <input
+                    matInput
+                    placeholder="Name"
+                    formControlName="name"
+                    required
+                  />
+                  <mat-error *ngIf="registerform.hasError('required','name')">
+                    Name is required
+                  </mat-error> </mat-form-field
+                ><br />
+                <mat-form-field class="full-width">
+                  <mat-label>Email</mat-label>
+
+                  <input
+                    matInput
+                    placeholder="email"
+                    formControlName="email"
+                    required
+                  />
+                  <mat-error *ngIf="registerform.hasError('required','email')">
+                    email is required
+                  </mat-error>
+                  <mat-error *ngIf="registerform.hasError('email','email')">
+                    email is invalid
+                  </mat-error> </mat-form-field
+                ><br />
+                <mat-form-field class="full-width">
+                  <mat-label>Password</mat-label>
+                  <input
+                    matInput
+                    type="password"
+                    placeholder="password"
+                    formControlName="password"
+                    [type]="hide ? 'password' : 'text'"
+                    required
+                  />
+                  <mat-icon
+                    matSuffix
+                    type="button"
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide"
+                  >
+                    <mat-icon
+                      >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon
+                    >
+                  </mat-icon>
+                  <mat-error
+                    *ngIf="registerform.hasError('required','password')"
+                  >
+                    password is required
+                  </mat-error>
+                  <mat-error
+                    *ngIf="registerform.hasError('pattern','password')"
+                  >
+                    your pasword must have at least one letter
+                  </mat-error>
+                  <mat-error *ngIf="registerform.hasError('min','password')">
+                    your pasword must contain at least 8 character
+                  </mat-error>
+                </mat-form-field>
+              </form>
+            </div>
+            <button
+              [disabled]="!registerform.valid"
+              type="submit"
+              (click)="register()"
+              class="btn btn-block btn-success"
+            >
+              Create Account
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
